@@ -1,0 +1,6 @@
+.friend{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:250px;padding:40px 0;border:5px solid #000;border-radius:20px}
+.image{width:240px;margin-bottom:34px}
+.name{font-size:80px}
+.status{font-size:50px}
+.isOnline{color:#028002}
+.isOffline{color:#e50905}
