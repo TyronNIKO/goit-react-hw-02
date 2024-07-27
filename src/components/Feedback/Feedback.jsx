@@ -1,19 +1,24 @@
-const Feedback = ({good, bad, neutral}) => {
-    const totalFeedback = good + neutral + bad;
-    const average = Math.round((good / totalFeedback) * 100);
+import {BsEmojiAngry, BsEmojiHeartEyes, BsEmojiNeutral} from "react-icons/bs";
+import css from "./Feedback.module.css";
+const Feedback = ({good, bad, neutral, total, average}) => {
     return (
-        <div>
-            {totalFeedback ? (
-                <ul>
-                    <li>Good: {good}</li>
-                    <li>Neutral:{neutral}</li>
-                    <li>Bad: {bad}</li>
-                    <li>Total: {totalFeedback}</li>
-                    <li>Positive: {!isNaN(average) && average}%</li>
-                </ul>
-            ) : (
-                "No feedback yet"
-            )}
+        <div className={css.feedback}>
+            <ul>
+                <li>
+                    <BsEmojiHeartEyes />
+                    Good: {good}
+                </li>
+                <li>
+                    <BsEmojiNeutral />
+                    Neutral:{neutral}
+                </li>
+                <li>
+                    <BsEmojiAngry />
+                    Bad: {bad}
+                </li>
+                <li>Total: {total}</li>
+                <li>Positive: {!isNaN(average) && average}%</li>
+            </ul>
         </div>
     );
 };
